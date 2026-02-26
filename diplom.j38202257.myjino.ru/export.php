@@ -1,33 +1,33 @@
 <?php
 
-// Íàñòðîéêè ïîäêëþ÷åíèÿ ê áàçå äàííûõ
+// ÃÃ Ã±Ã²Ã°Ã®Ã©ÃªÃ¨ Ã¯Ã®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿ Ãª Ã¡Ã Ã§Ã¥ Ã¤Ã Ã­Ã­Ã»Ãµ                                                        ÑˆÐ°Ð¼Ð¿Ð¸Ð½ÑŒÐ¾Ð½Ñ‹
 $host = 'localhost';
 $db = 'j38202257_diplom';
 $user = '047582029_diplom';
 $pass = 'Diplom_41';
 
-// Ïîäêëþ÷åíèå ê áàçå äàííûõ
+// ÃÃ®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥ Ãª Ã¡Ã Ã§Ã¥ Ã¤Ã Ã­Ã­Ã»Ãµ
 $conn = new mysqli($host, $user, $pass, $db);
 
-// Ïðîâåðêà ïîäêëþ÷åíèÿ
+// ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã¯Ã®Ã¤ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Çàïðîñ íà ïîëó÷åíèå äàííûõ
+// Ã‡Ã Ã¯Ã°Ã®Ã± Ã­Ã  Ã¯Ã®Ã«Ã³Ã·Ã¥Ã­Ã¨Ã¥ Ã¤Ã Ã­Ã­Ã»Ãµ
 $sql = "SELECT * FROM nepoladki";
 $result = $conn->query($sql);
 
-// Ïðîâåðêà íàëè÷èÿ äàííûõ
+// ÃÃ°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã­Ã Ã«Ã¨Ã·Ã¨Ã¿ Ã¤Ã Ã­Ã­Ã»Ãµ
 if ($result->num_rows > 0) {
-    // Ñîçäàíèå òåêñòîâîãî äîêóìåíòà
+    // Ã‘Ã®Ã§Ã¤Ã Ã­Ã¨Ã¥ Ã²Ã¥ÃªÃ±Ã²Ã®Ã¢Ã®Ã£Ã® Ã¤Ã®ÃªÃ³Ã¬Ã¥Ã­Ã²Ã 
     header('Content-Type: text/plain');
     header('Content-Disposition: attachment; filename="otchet_po_oshibkam.txt"');
 
-    // Âûâîä çàãîëîâêîâ òàáëèöû
+    // Ã‚Ã»Ã¢Ã®Ã¤ Ã§Ã Ã£Ã®Ã«Ã®Ã¢ÃªÃ®Ã¢ Ã²Ã Ã¡Ã«Ã¨Ã¶Ã»
     echo "id\     FIO\                            otdel\          categoriy\        oshibca\              done";
 
-    // Âûâîä äàííûõ
+    // Ã‚Ã»Ã¢Ã®Ã¤ Ã¤Ã Ã­Ã­Ã»Ãµ
     while($row = $result->fetch_assoc()) {
         echo "\n". $row['id'] . "\t" . $row['FIO'] . "\t" . $row['otdel'] . "\t" . $row['categoriy'] . "\t" . "\t" . $row['oshibca'] . "\t" . $row['done']. "\n";
     }
@@ -35,8 +35,9 @@ if ($result->num_rows > 0) {
     echo "No results found.";
 }
 
-// Çàêðûòèå ñîåäèíåíèÿ
+// Ã‡Ã ÃªÃ°Ã»Ã²Ã¨Ã¥ Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¥Ã­Ã¨Ã¿
 $conn->close();
+
 
 
 
